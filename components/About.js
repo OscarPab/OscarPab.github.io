@@ -3,7 +3,7 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
-import ComputerModel from './ComputerModel';
+import ComputerSetup from './ComputerSetup';
 
 const About = () => {
   return (
@@ -62,7 +62,7 @@ const About = () => {
               <pointLight position={[10, 10, 10]} intensity={1} />
               <directionalLight position={[-5, 5, 5]} intensity={0.5} />
               <Suspense fallback={null}>
-                <ComputerModel />
+                <ComputerSetup />
               </Suspense>
               <OrbitControls 
                 enableZoom={false} 
