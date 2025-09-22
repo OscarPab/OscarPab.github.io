@@ -1,0 +1,218 @@
+'use client';
+
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
+
+const ProjectCard = ({ project, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl"
+      whileHover={{ y: -10 }}
+    >
+      {/* Encabezado con gradiente de color para la tarjeta */}
+      <div className="h-48 bg-gradient-to-r from-blue-600 to-purple-600 relative">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-white text-xl font-bold">{project.categoryLabel}</span>
+        </div>
+      </div>
+      
+      {/* Contenido principal de la tarjeta */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+        <p className="text-gray-300 mb-4">{project.description}</p>
+        
+        {/* Lista de tecnologías utilizadas */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.technologies.map((tech, i) => (
+            <span key={i} className="bg-blue-600 text-white px-2 py-1 rounded text-sm">
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        {/* Enlaces a demo y código */}
+        <div className="flex justify-between">
+          {project.demoUrl && (
+            <a 
+              href={project.demoUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-blue-400 hover:text-blue-300 transition"
+            >
+              <ExternalLink size={16} className="mr-1" />
+              Demo
+            </a>
+          )}
+          
+          {project.githubUrl && (
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-400 hover:text-white transition"
+            >
+              <Github size={16} className="mr-1" />
+              GitHub
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState('todos');
+  
+  // Lista de proyectos (algunos comentados temporalmente)
+  const projects = [
+    /*
+    {
+      title: "Sistema Punto de Venta Java",
+      description: "Sistema completo de punto de venta con gestión de inventario y reportes.",
+      technologies: ["Java", "MySQL", "Swing"],
+      category: "punto-venta",
+      categoryLabel: "Punto de Venta",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "E-commerce WordPress",
+      description: "Tienda en línea con carrito de compras y pasarela de pagos.",
+      technologies: ["WordPress", "WooCommerce", "PHP"],
+      category: "tienda-online",
+      categoryLabel: "Tienda Online",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    */
+    {
+      title: "Landing Page Servicios",
+      description: "Landing page moderna para empresa de servicios digitales.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      category: "landing-page",
+      categoryLabel: "Landing Page",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Juego Plataformas Unity",
+      description: "Videojuego de plataformas 2D con mecánicas innovadoras.",
+      technologies: ["Unity", "C#"],
+      category: "videojuegos",
+      categoryLabel: "Videojuegos",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "App React Firebase",
+      description: "Aplicación web con autenticación y base de datos en tiempo real.",
+      technologies: ["React", "Firebase", "CSS"],
+      category: "programacion",
+      categoryLabel: "Programación",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Libro Física LaTeX",
+      description: "Libro de introducción a la física con diagramas y fórmulas.",
+      technologies: ["LaTeX", "Física"],
+      category: "libros",
+      categoryLabel: "Libros",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Simulador de Movimiento Parabólico",
+      description: "Simulación física del movimiento parabólico con visualización interactiva.",
+      technologies: ["Python", "Matplotlib", "Física"],
+      category: "fisica",
+      categoryLabel: "Física",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Análisis de Datos Experimentales",
+      description: "Procesamiento y análisis de datos de experimentos físicos.",
+      technologies: ["Python", "Pandas", "Numpy"],
+      category: "fisica",
+      categoryLabel: "Física",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Modelado 3D de Estructuras Atómicas",
+      description: "Visualización 3D de estructuras atómicas y moleculares.",
+      technologies: ["Three.js", "JavaScript", "Física"],
+      category: "fisica",
+      categoryLabel: "Física",
+      demoUrl: "#",
+      githubUrl: "#"
+    },
+  ];
+
+  // Opciones de filtrado disponibles
+  const filters = [
+    { key: 'todos', label: 'Todos' },
+    { key: 'landing-page', label: 'Landing Pages' },
+    /*
+    { key: 'punto-venta', label: 'Puntos de Venta' },
+    { key: 'tienda-online', label: 'Tiendas Online' },
+    */
+    { key: 'videojuegos', label: 'Videojuegos' },
+    { key: 'programacion', label: 'Programación' },
+    { key: 'libros', label: 'Libros' },
+    { key: 'fisica', label: 'Física' },
+  ];
+
+  // Filtrar proyectos según la categoría seleccionada
+  const filteredProjects = activeFilter === 'todos' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
+
+  return (
+    <section id="proyectos" className="py-20 bg-gray-800">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-white mb-4">Proyectos</h2>
+        <p className="text-center text-gray-400 mb-12">Explora mi trabajo por categorías</p>
+        
+        {/* Filtros responsive para categorías de proyectos */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12 px-2">
+          {filters.map(filter => (
+            <button
+              key={filter.key}
+              onClick={() => setActiveFilter(filter.key)}
+              className={`px-3 py-2 rounded-full transition text-sm md:text-base ${
+                activeFilter === filter.key
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+        
+        {/* Grid de proyectos responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} index={index} />
+          ))}
+        </div>
+
+        {/* Mensaje si no hay proyectos en la categoría seleccionada */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center text-gray-400 mt-12">
+            <p>No hay proyectos en esta categoría.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
