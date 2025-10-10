@@ -91,13 +91,13 @@ const Projects = () => {
     },
     */
     {
-      title: "Landing Page Servicios",
-      description: "Landing page moderna para empresa de servicios digitales.",
+      title: "Milina Salon",
+      description: "Landing page elegante y moderna para Milina Salon, un salón de belleza especializado en uñas, estética y cuidado personal.",
       technologies: ["HTML", "CSS", "JavaScript"],
       category: "landing-page",
       categoryLabel: "Landing Page",
-      demoUrl: "#",
-      githubUrl: "#"
+      demoUrl: "https://oscarpab.github.io/milina-salon-landing-page/index.html",
+      githubUrl: "https://github.com/OscarPab/milina-salon-landing-page"
     },
     {
       title: "Juego Plataformas Unity",
