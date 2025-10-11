@@ -117,13 +117,12 @@ const Projects = () => {
       imageUrl: "/images/gato.png"
     },
     {
-      title: "App React Firebase",
-      description: "Aplicación web con autenticación y base de datos en tiempo real.",
-      technologies: ["React", "Firebase", "CSS"],
+      title: "Calculadora en Java Swing",
+      description: "Este proyecto contiene una calculadora simple implementada en Java",
+      technologies: ["Java", "Swing", "eclipse"],
       category: "programacion",
       categoryLabel: "Programación",
-      demoUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/OscarPab/Calculadora-en-Java-Swing"
     },
     {
       title: "Libro Física LaTeX",
@@ -136,32 +135,23 @@ const Projects = () => {
       imageUrl: "/images/libro_latex.png"
     },
     {
-      title: "Simulador de Movimiento Parabólico",
-      description: "Simulación física del movimiento parabólico con visualización interactiva.",
-      technologies: ["Python", "Matplotlib", "Física"],
+      title: "Campo y Potencial Eléctrico",
+      description: "Simulación del campo y potencial eléctrico generado por un par de cargas puntuales",
+      technologies: ["Python", "Spyder", "Anaconda"],
       category: "fisica",
       categoryLabel: "Física",
-      demoUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/OscarPab/Campo-y-Potencial-Electrico",
+      imageUrl: "/images/cargas.png"
     },
     {
-      title: "Análisis de Datos Experimentales",
-      description: "Procesamiento y análisis de datos de experimentos físicos.",
-      technologies: ["Python", "Pandas", "Numpy"],
+      title: "Celula viva",
+      description: "Simulación de evolución celular en una cuadrícula.",
+      technologies: ["Python", "Spyder", "Anaconda"],
       category: "fisica",
       categoryLabel: "Física",
-      demoUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Modelado 3D de Estructuras Atómicas",
-      description: "Visualización 3D de estructuras atómicas y moleculares.",
-      technologies: ["Three.js", "JavaScript", "Física"],
-      category: "fisica",
-      categoryLabel: "Física",
-      demoUrl: "#",
-      githubUrl: "#"
-    },
+      githubUrl: "https://github.com/OscarPab/Simulacion-de-Celulas",
+      imageUrl: "/images/celula.png"
+    }
   ];
 
   // Opciones de filtrado disponibles
