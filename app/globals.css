@@ -66,3 +66,21 @@ html {
 [data-next-badge="true"] {
   display: none !important;
 }
+/* 🔧 Corrige espacio superior en móviles */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  #inicio {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    min-height: 100vh !important;
+  }
+}
+
+#inicio + .md\:hidden.h-16 {
+  display: none !important;
+}

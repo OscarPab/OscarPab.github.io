@@ -108,8 +108,8 @@ const FinalNavbar = () => {
   </div>
 </div>
 
-      {/* Espacio para evitar que el contenido se oculte detrás del navbar */}
-      <div className="md:hidden h-16"></div>
+      {/* Espacio para evitar que el contenido se oculte detrás del navbar 
+      <div className="md:hidden h-16"></div>*/}
     </>
   );
 };
