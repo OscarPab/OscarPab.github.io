@@ -108,6 +108,16 @@ const Projects = () => {
       imageUrl: "/images/milina-salon-preview.png"
     },
     {
+  "title": "Dental Core",
+  "description": "Landing page profesional para clínica dental con diseño responsive. Incluye servicios odontológicos, formulario de citas online y sección de testimonios.",
+  "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+  "category": "landing-page",
+  "categoryLabel": "Landing Page",
+  "demoUrl": "https://oscarpab.github.io/Dental-core/",
+  "githubUrl": "https://github.com/OscarPab/Dental-core",
+  "imageUrl": "/images/dental.png"
+},
+    {
       title: "EL TALLER DEL ABUELO",
       description: "Videojuego de plataformas 2D con mecánicas Puzzle.",
       technologies: ["Rpg maker", ".json"],
