@@ -117,6 +117,16 @@ const Projects = () => {
   "githubUrl": "https://github.com/OscarPab/Dental-core",
   "imageUrl": "/images/dental.png"
 },
+{
+  "title": "Haircare",
+  "description": "Landing page moderna para salón de belleza Haircare. Diseño responsive con secciones de servicios, galería, equipo profesional, precios y formulario de reservas.",
+  "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+  "category": "landing-page",
+  "categoryLabel": "Landing Page",
+  "demoUrl": "https://oscarpab.github.io/Haircare-/",
+  "githubUrl": "https://github.com/OscarPab/Haircare-",
+  "imageUrl": "/images/haircare.png"
+},
     {
       title: "EL TALLER DEL ABUELO",
       description: "Videojuego de plataformas 2D con mecánicas Puzzle.",
