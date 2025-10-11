@@ -14,12 +14,19 @@ const ProjectCard = ({ project, index }) => {
       whileHover={{ y: -10 }}
     >
       {/* Encabezado con gradiente de color para la tarjeta */}
-      <div className="h-48 bg-gradient-to-r from-blue-600 to-purple-600 relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white text-xl font-bold">{project.categoryLabel}</span>
-        </div>
-      </div>
-      
+      <div className="h-48 relative overflow-hidden">
+  {project.imageUrl && (
+    <img
+      src={project.imageUrl}
+      alt={project.title}
+      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+    />
+  )}
+  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+    <span className="text-white text-xl font-semibold">{project.categoryLabel}</span>
+  </div>
+</div>
+
       {/* Contenido principal de la tarjeta */}
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
@@ -97,16 +104,17 @@ const Projects = () => {
       category: "landing-page",
       categoryLabel: "Landing Page",
       demoUrl: "https://oscarpab.github.io/milina-salon-landing-page/index.html",
-      githubUrl: "https://github.com/OscarPab/milina-salon-landing-page"
+      githubUrl: "https://github.com/OscarPab/milina-salon-landing-page",
+      imageUrl: "/images/milina-salon-preview.png"
     },
     {
-      title: "Juego Plataformas Unity",
-      description: "Videojuego de plataformas 2D con mecánicas innovadoras.",
-      technologies: ["Unity", "C#"],
+      title: "EL TALLER DEL ABUELO",
+      description: "Videojuego de plataformas 2D con mecánicas Puzzle.",
+      technologies: ["Rpg maker", ".json"],
       category: "videojuegos",
       categoryLabel: "Videojuegos",
-      demoUrl: "#",
-      githubUrl: "#"
+      demoUrl: "https://racsoarom.itch.io/el-taller-del-abuelo",
+      imageUrl: "/images/gato.png"
     },
     {
       title: "App React Firebase",
@@ -119,12 +127,13 @@ const Projects = () => {
     },
     {
       title: "Libro Física LaTeX",
-      description: "Libro de introducción a la física con diagramas y fórmulas.",
+      description: "Libro de introducción a latex.",
       technologies: ["LaTeX", "Física"],
       category: "libros",
       categoryLabel: "Libros",
-      demoUrl: "#",
-      githubUrl: "#"
+      demoUrl: "https://www.researchgate.net/publication/389671967_Introduccion_a_LaTeX_Desde_Cero_hasta_Avanzado_Detalles_academicos",
+      githubUrl: "https://www.overleaf.com/read/pdgkmsfctswt#ec9b16",
+      imageUrl: "/images/libro_latex.png"
     },
     {
       title: "Simulador de Movimiento Parabólico",
