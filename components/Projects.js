@@ -127,6 +127,16 @@ const Projects = () => {
   "githubUrl": "https://github.com/OscarPab/Haircare-",
   "imageUrl": "/images/haircare.png"
 },
+{
+  "title": "Pato Place",
+  "description": "Landing page elegante para restaurante italiano Pato Place. Diseño completamente responsive con secciones de menú, galería, reservas online, testimonios y información de contacto. Implementa navegación suave y efectos visuales atractivos.",
+  "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "jQuery", "Slick Slider", "Lightbox"],
+  "category": "landing-page",
+  "categoryLabel": "Landing Page",
+  "demoUrl": "https://oscarpab.github.io/pato/",
+  "githubUrl": "https://github.com/OscarPab/pato",
+  "imageUrl": "/images/pato.png"
+},
     {
       title: "EL TALLER DEL ABUELO",
       description: "Videojuego de plataformas 2D con mecánicas Puzzle.",
